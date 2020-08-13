@@ -1,17 +1,23 @@
 struct DSU{
   vector<ll> dsu;
+  vector<ll> s;
   DSU(ll n){
-    loop(i,0,n)
-      dsu.pb(i);
+    for(int i=0;i<n;i++)
+     {dsu.pb(i);
+      s.pb(1);}
   }
   ll root(ll x){
     if(x==dsu[x])
       return x;
-    return dsu[x] = root(dsu[x]);
+      ll k=root(dsu[x]);
+    return dsu[x] =k;
   }
-  void merge(ll x, ll y){
+  bool merge(ll x, ll y){
     if((x=root(x))==(y=root(y)))
-      return;
+      return 0;
     dsu[x]=y;
+    s[y]+=s[x];
+    //s[x]=s[y];
+    return 1;
   }
 };
