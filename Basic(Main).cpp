@@ -6,13 +6,13 @@
 #include <sstream>
 using namespace std;
 
-#define mod 1000000007
 #define ll long long int
 #define mk make_pair
 #define pb push_back
 #define xx first
 #define yy second
 #define ar array
+#define del 1e-8
 
 double pi=3.141592653589793238;
 const int M = 1e9+7;
